@@ -1,31 +1,31 @@
-class cell():
-    def __init__(self, piece):
-        if piece == 'p1pawn':
-            self.region = '|[p]'
-        elif piece == 'p2pawn':
-            self.region = '|(P)'
-        elif piece == 'p1knight':
-            self.region = '|[h]'
-        elif piece == 'p2knight':
-            self.region = '|(H)'
-        elif piece == 'p1rook':
-            self.region = '|[r]'
-        elif piece == 'p2rook':
-            self.region = '|(R)'
-        elif piece == 'p1bishop':
-            self.region = '|[b]'
-        elif piece == 'p2bishop':
-            self.region = '|(B)'
-        elif piece == 'p1queen':
-            self.region = '|[q]'
-        elif piece == 'p2queen':
-            self.region = '|(Q)'
-        elif piece == 'p1king':
-            self.region = '|[k]'
-        elif piece == 'p2king':
-            self.region = '|(K)'
-        else:
-            self.region = '| 0 '
+def make_cell(piece):
+    if piece == 'p1pawn': 
+        output = '|[p]'
+    elif piece == 'p2pawn':
+        output = '|(P)'
+    elif piece == 'p1knight':
+        output = '|[h]'
+    elif piece == 'p2knight':
+        output = '|(H)'
+    elif piece == 'p1rook':
+        output = '|[r]'
+    elif piece == 'p2rook':
+        output = '|(R)'
+    elif piece == 'p1bishop':
+        output = '|[b]'
+    elif piece == 'p2bishop':
+        output = '|(B)'
+    elif piece == 'p1queen':
+        output = '|[q]'
+    elif piece == 'p2queen':
+        output = '|(Q)'
+    elif piece == 'p1king':
+        output = '|[k]'
+    elif piece == 'p2king':
+        output = '|(K)'
+    else:
+        output = '| 0 '
+    return output
 
 def start_conditions():
     global rec_pieces
@@ -71,8 +71,8 @@ def start_conditions():
             if piece != '0':
                 rec_pieces[0].append(x+str(y))
                 rec_pieces[1].append(piece)
-            cellx = cell(piece)
-            print(cellx.region, end='') 
+            cell = make_cell(piece)
+            print(cell, end='') 
         print('| ', y, '\n')
 
 def move_cell(sel_reg, mov_reg, piece):
@@ -112,8 +112,8 @@ def make_board():
         for x in regions[0]:
             z = x + str(y)
             piece = check_cell(z)
-            cellx = cell(piece)
-            print(cellx.region, end='')
+            cell = make_cell(piece)
+            print(cell, end='')
         print('| ', y, '\n')
 
 def player1_move():
