@@ -5,7 +5,8 @@ but like a chess board in the real world where you can place a piece anywhere.
 
 How to play:
 - A player is asked what they would like to do. If they input 'resign', the game is finished. However, if they input 'move' they are then prompted to select a piece. 
-This is done by inputting a coordinate for a piece (for example f7). After this input, they are prompted for a movement coordinate for where the piece will be moved to.
+This is done by inputting a coordinate for a piece (for example f7).
+- After this input, they are prompted for a movement coordinate for where the piece will be moved to.
 - To take a piece you just move one piece on top of another piece.
 - The rest is just chess.
 
