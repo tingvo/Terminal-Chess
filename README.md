@@ -1,4 +1,4 @@
-This project is a simple chess board controllable in the terminal. I created this as practice while re-learning how to code.
+This project is a simple chess board controllable in the terminal, built in python. I created this as practice while re-learning how to code.
 
 In the current version at least, it doesn't work like a chess game online that tells you where you can and can't place a piece, 
 but like a chess board in the real world where you can place a piece anywhere. 
