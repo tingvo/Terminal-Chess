@@ -96,16 +96,6 @@ def move_cell(sel_reg, mov_reg, piece):
         rec_pieces[0].append(mov_reg)
         rec_pieces[1].append(piece)
 
-def get_cell(x, y):
-    coord = x + str(y)
-    if not coord in rec_pieces[0]:
-        return '0'
-    c = 0
-    for rec_piece in rec_pieces[0]:
-        if rec_piece == coord:
-            return rec_pieces[1][c]
-        c += 1
-
 def check_cell(pc_sel):
     if not pc_sel in rec_pieces[0]:
         return '0'
@@ -120,7 +110,8 @@ def make_board():
     print('| a | b | c | d | e | f | g | h |', '\n')
     for y in regions[1]:
         for x in regions[0]:
-            piece = get_cell(x, y)
+            z = x + str(y)
+            piece = check_cell(z)
             cellx = cell(piece)
             print(cellx.region, end='')
         print('| ', y, '\n')
