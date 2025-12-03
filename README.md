@@ -13,3 +13,4 @@ This is done by inputting a coordinate for a piece (for example f7).
 Currently, as this is a very simple chess board, there is no Castling or En passant, both of which I intend to see if I can add in future.
 I also would like to see if I can restrict where a piece is able to go.
 
+I have additionally attempted to create a C++ version of this application.
