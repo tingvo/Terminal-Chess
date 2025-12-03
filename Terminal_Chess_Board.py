@@ -117,7 +117,6 @@ def make_board():
         print('| ', y, '\n')
 
 def player1_move():
-    global inp
     valid1 = False
     valid2 = False
     while valid1 == False:

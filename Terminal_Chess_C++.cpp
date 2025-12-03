@@ -165,27 +165,28 @@ bool player1_move(){
             string piece = get_cell(pc_sel);
             if (piece == "0"){
                 cout << "No piece found, please select a piece.";
-            } 
-            //elif not pc_sel[0] in regions[0] or not pc_sel[1] in str(regions[1]):
-                //print('Please enter a valid coordinate.')
-            else {
+            } else if (find(begin(regions[0]), end(regions[0]), pc_sel[0]) == end(regions[0]) || 
+                    find(begin(regions[1]), end(regions[1]), pc_sel[1]) == end(regions[1])){
+                cout << "Please enter a valid coordinate." << endl;
+            } else {
                 valid1 = true;
             }
             while (valid2 == false){
                 cout << "Where to?: ";
                 cin >> mv_sel;
-                valid2 = true;
-                
-                //if not mv_sel[0] in regions[0] or not mv_sel[1] in str(regions[1]):
-                    //print('Please enter a valid coordinate.') 
-                //else {valid2 = true;}
-            } 
+                if (find(begin(regions[0]), end(regions[0]), mv_sel[0]) == end(regions[0]) || 
+                    find(begin(regions[1]), end(regions[1]), mv_sel[1]) == end(regions[1])){
+                cout << "Please enter a valid coordinate." << endl;
+                } else {
+                    valid2 = true;
+                }
             move_cell(pc_sel, mv_sel, piece);
             make_board();
             return true;
-    } else if (inp == "resign"){
-        return false;
-    } 
+            }
+        } else if (inp == "resign"){
+            return false;
+        } 
     }
 }
 
@@ -204,25 +205,27 @@ bool player2_move(){
             string piece = get_cell(pc_sel);
             if (piece == "0"){
                 cout << "No piece found, please select a piece.";
-            } 
-            //elif not pc_sel[0] in regions[0] or not pc_sel[1] in str(regions[1]):
-                //print('Please enter a valid coordinate.')
-            else {
+            } else if (find(begin(regions[0]), end(regions[0]), pc_sel[0]) == end(regions[0]) || 
+                    find(begin(regions[1]), end(regions[1]), pc_sel[1]) == end(regions[1])){
+                cout << "Please enter a valid coordinate." << endl;
+            } else {
                 valid1 = true;
             }
             while (valid2 == false){
                 cout << "Where to?: ";
                 cin >> mv_sel;
-                valid2 = true;
-                //if not mv_sel[0] in regions[0] or not mv_sel[1] in str(regions[1]):
-                    //print('Please enter a valid coordinate.') 
-                //else {valid2 = true;}
-            } 
+                if (find(begin(regions[0]), end(regions[0]), mv_sel[0]) == end(regions[0]) || 
+                    find(begin(regions[1]), end(regions[1]), mv_sel[1]) == end(regions[1])){
+                cout << "Please enter a valid coordinate." << endl;
+                } else {
+                    valid2 = true;
+                }
             move_cell(pc_sel, mv_sel, piece);
             make_board();
             return true;
-    } else if (inp == "resign"){
-        return false;
-    } 
+            }
+        } else if (inp == "resign"){
+            return false;
+        } 
     }
 }
