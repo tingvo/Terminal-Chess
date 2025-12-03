@@ -64,7 +64,6 @@ void start_conditions(){
     cout << "| a | b | c | d | e | f | g | h |" << endl;
     int i = 0;
     string piece;
-    //extern string rec_pieces[32][32];
     for (string y : regions[1]){
         for (string x : regions[0]){
             if (y == "2"){
@@ -107,7 +106,6 @@ void start_conditions(){
 }
 
 void move_cell(string sel_reg, string mov_reg, string piece){
-    //extern string rec_pieces[32][32];
     int c = 0;
     for (string rec_piece : rec_pieces[0]){
         if (rec_piece == sel_reg){
@@ -184,6 +182,7 @@ bool player1_move(){
             } 
             move_cell(pc_sel, mv_sel, piece);
             make_board();
+            return true;
     } else if (inp == "resign"){
         return false;
     } 
@@ -221,6 +220,7 @@ bool player2_move(){
             } 
             move_cell(pc_sel, mv_sel, piece);
             make_board();
+            return true;
     } else if (inp == "resign"){
         return false;
     } 
